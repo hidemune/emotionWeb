@@ -1,0 +1,55 @@
+* {
+  font-size : 36px;
+  line-height : 1.5em;
+}
+
+body {
+  background-color : #f0f8ff;
+}
+
+a {
+  font-size : 42px;
+  line-height : 1.5em;
+}
+
+textarea {
+  height : calc( 1.5em * 10 );
+  width : 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+button {
+  height : calc( 1.5em * 4 );
+  width : 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color : #4169e1;
+  color: #ffffff;
+}
+
+p {
+  font-size : 26px;
+  line-height : 1.5em;
+  text-align : right;
+}
+
+td {
+  border-style : solid;
+  border-color : #f0f8ff;
+  background-color : #afeeee;
+  border-width: 1ex;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.detail {
+  border-color : #ffffff;
+  background-color : transparent;
+  border-width: 1px;
+}

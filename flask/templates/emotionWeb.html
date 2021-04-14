@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2><a href="/">日本語テキスト感情分析</a></h2>
+日本語で文章を入力し、送信ボタンを押してください。<br>
+行毎に感情を分析・表示します。<br>
+<form method="post" action="/" target="_top" id="form_id">
+<textarea name="text" id="text">{{ txt }}</textarea><br>
+<button type="submit">送信する</button>
+</form>
+<h3>結果</h3>
+<table>
+{% for member in members %}
+  <tr>
+    <td class="nowrap">{{ member.emotion }} </td><td> {{ member.text }}</td>
+  </tr>
+  <tr>
+  <td class="detail"></td>
+  <td class="detail">
+  <table>
+  {% for member_detail in member.detail %}
+  {% if member_detail.len > 0 : %}
+    <tr>
+    <td class="detail"> {{ member_detail.jp }} &nbsp;</td><td class="detail">
+    {{ "{:.2}".format(member_detail.len) }} &nbsp;</td><td class="detail">
+    {{ member_detail.emotion }} </td><td class="detail" style="background-color: rgb( {{ (member_detail.z + 1.0) * 255 / 2 }}  , {{ (member_detail.x + 1.0) * 255 / 2 }} , {{ (member_detail.y + 1.0) * 255 / 2 }} ) ;">
+    　　</td></tr>
+  {% endif %}
+  {% endfor %}
+  </table>
+  </td>
+  </tr>
+{% endfor %}
+</table>
+<br>
+
+{% endblock %}
+

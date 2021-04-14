@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<title>{{ title }}</title>
+<!-- #css読込 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/emotionWeb_23.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+function setText() {
+  var text = $('#text');
+  text.val('愛😇楽観🙃喜び😄関心😉素直🙂信頼😊心配😟自責😑軽蔑😏嫌悪🙁怒り😠失望😞悲しみ😥驚き😯攻撃💥畏れ💬');
+  $('#form_id').submit();
+}
+function setText2() {
+  var text = $('#text');
+  text.val('こんにちは。\nこれは、独自の方法で日本語の印象・感情を分析し、表示するソフトです。\n何かの参考になれば幸せます。');
+  $('#form_id').submit();
+}
+</script>
+<div align="right">
+<input type="button" onclick="setText2()" value="サンプル">
+<input type="button" onclick="setText()" value="凡例表示">
+</div>
+{% block content %}
+<!-- ここにメインコンテンツを書く -->
+{% endblock %}
+<hr>
+<p onclick='$("html, body").animate({ scrollTop: 0 }, "slow");'>Tanaka Computer Service Corp.&nbsp;&nbsp;&nbsp;&nbsp;</p>
+</body>
+</html>
+

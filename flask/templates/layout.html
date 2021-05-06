@@ -28,6 +28,62 @@ function setText2() {
 {% endblock %}
 <hr>
 <p onclick='$("html, body").animate({ scrollTop: 0 }, "slow");'>Tanaka Computer Service Corp.&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<br><br><br>
+<style type="text/css">
+#topbutton {
+   /* ▼ボタンの表示位置を画面の右下に固定 */
+   position: fixed; /* ←表示場所を固定 */
+   bottom: 18px;   /* ←下端からの距離 */
+   right: 18px;    /* ←右端からの距離 */
+   width: 7em;     /* ←横幅 */
+
+   /* ▼最初は非表示にしておく */
+   display: none;
+
+   /* ▼配色・配置・文字の装飾など */
+   background-color: #2525aa; /* ←背景色 */
+   opacity: 0.75;        /* ←透明度 */
+   border-radius: 24px;  /* ←角丸の半径 */
+   text-align: center;  /* ←文字の位置 */
+   font-size: 120%;     /* ←文字サイズ */
+   font-weight: bold;   /* ←文字の太さ */
+   margin: 0px;          /* ←外側の余白 */
+   padding: 10px;       /* ←内側の余白 */
+}
+#topbutton a {
+   /* ▼リンクの装飾 */
+   color: white;          /* ←文字色 */
+   text-decoration: none; /* ←下線なし */
+}
+#topbutton a:hover {
+   /* ▼マウスが載ったときの装飾 */
+   color: yellow;              /* ←文字色 */
+   text-decoration: underline; /* ←下線あり */
+}
+</style>
+<p id="topbutton">
+   <a href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">▲TOPへ戻る</a>
+</p>
+<script type="text/javascript">
+$(function() {
+   // スクロールしたときに実行
+   $(window).scroll(function () {
+      // 目的のスクロール量を設定(px)
+      var TargetPos = 350;
+      // 現在のスクロール位置を取得
+      var ScrollPos = $(window).scrollTop();
+      // 現在位置が目的のスクロール量に達しているかどうかを判断
+      if( ScrollPos >= TargetPos) {
+         // 達していれば表示
+         $("#topbutton").fadeIn();
+      }
+      else {
+         // 達していなければ非表示
+         $("#topbutton").fadeOut();
+      }
+   });
+});
+</script>
 </body>
 </html>
 
